@@ -1,0 +1,34 @@
+# 🏦 Real-time Banking System (Core & Real-time Notifications)
+
+یک سیستم بانکی مدرن بر پایه **Django** و **Node.js** که تراکنش‌های مالی را با رعایت کامل اصول **ACID** انجام داده و به صورت **Real-time** از طریق وب‌ساکت به کاربران اطلاع‌رسانی می‌کند.
+
+## 🚀 ویژگی‌های اصلی (Key Features)
+- **تراکنش‌های امن (ACID Compliant):** استفاده از `transaction.atomic` و `select_for_update` برای جلوگیری از Race Condition.
+- **اطلاع‌رسانی آنی (Real-time):** سیستم Pub/Sub با استفاده از Redis و Socket.io.
+- **معماری تمیز (Clean Architecture):** جداسازی لایه Logic (Services) از لایه View بر اساس اصول SOLID.
+- **مدل کاربر اختصاصی:** پیاده‌سازی Custom User Model برای انعطاف‌پذیری بیشتر.
+
+## 🛠 تکنولوژی‌های استفاده شده (Tech Stack)
+- **Backend:** Python (Django), Django Rest Framework (DRF)
+- **Real-time Service:** Node.js, TypeScript, Socket.io
+- **Message Broker:** Redis
+- **Database:** PostgreSQL (یا SQLite برای محیط توسعه)
+
+## 🏗 معماری پروژه (System Architecture)
+این پروژه از سه بخش اصلی تشکیل شده است:
+1. **Django Core:** مدیریت حساب‌ها، تراکنش‌ها و احراز هویت.
+2. **Redis:** به عنوان میانجی (Broker) برای انتقال پیام بین جنگو و نود جی‌اس.
+3. **Node.js Service:** گوش دادن به ردیس و ارسال پیام به سمت کلاینت (Browser).
+
+
+
+## 🔧 راه‌اندازی پروژه (Setup)
+
+### ۱. بخش جنگو (Backend)
+```bash
+cd backend
+python -m venv venv
+source venv/bin/scripts/activate  # در ویندوز: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
