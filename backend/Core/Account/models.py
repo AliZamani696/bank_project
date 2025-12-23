@@ -55,13 +55,12 @@ class Account(models.Model):
         max_digits=15,
         decimal_places=2,
         default=Decimal('0.00'),
-        validators=[MinValueValidator(Decimal('0.00'))] # جلوگیری از مقدار منفی در لایه اپلیکیشن
+        validators=[MinValueValidator(Decimal('0.00'))] 
         )
     class Meta:
-        # اصل ACID: دیتابیس هرگز اجازه نمی‌دهد موجودی منفی شود
         constraints = [
             models.CheckConstraint(
-                condition=models.Q(balance__gte=0), # تغییر check به condition
+                condition=models.Q(balance__gte=0),
                 name='balance_cannot_be_negative'
             )
         ]
