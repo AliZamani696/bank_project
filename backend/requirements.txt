@@ -1,0 +1,9 @@
+django<5.1
+
+djangorestframework
+
+psycopg2-binary
+
+redis
+
+django-environ 
