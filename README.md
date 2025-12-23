@@ -21,14 +21,3 @@
 3. **Node.js Service:** گوش دادن به ردیس و ارسال پیام به سمت کلاینت (Browser).
 
 
-
-## 🔧 راه‌اندازی پروژه (Setup)
-
-### ۱. بخش جنگو (Backend)
-```bash
-cd backend
-python -m venv venv
-source venv/bin/scripts/activate  # در ویندوز: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
